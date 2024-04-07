@@ -1,7 +1,9 @@
-const express = require('express')
-const cors = require('cors')
-const mongoose = require('mongoose')
-const bodyParser = require('body-parser')
+import express from 'express'
+import { json, urlencoded } from 'express'
+import cors from 'cors'
+import { connect } from 'mongoose'
+import bodyParser from 'body-parser'
+import employeeRoute from './routes/employeeRoute.js'
 
 // Initialize the express app
 const app = express()
@@ -9,12 +11,11 @@ const port = 8000
 
 // Middleware
 app.use(cors())
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(json())
+app.use(urlencoded({ extended: false }))
 
 // Mongodb Connection
-mongoose
-  .connect('mongodb+srv://parmilan:parmilan@cluster0.ygk8gbf.mongodb.net/')
+connect('mongodb+srv://parmilan:parmilan@cluster0.ygk8gbf.mongodb.net/')
   .then(() => {
     console.log('Mongodb Connected Successfully..')
   })
@@ -26,3 +27,5 @@ mongoose
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`)
 })
+
+app.use('/employee', employeeRoute)

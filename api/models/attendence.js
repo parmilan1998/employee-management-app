@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+import mongoose from 'mongoose'
 
 const attendenceSchema = new mongoose.Schema({
   employeeID: {
@@ -20,4 +20,4 @@ const attendenceSchema = new mongoose.Schema({
 })
 
 const Attendence = mongoose.model('Attendence', attendenceSchema)
-module.exports = Attendence
+export default Attendence
