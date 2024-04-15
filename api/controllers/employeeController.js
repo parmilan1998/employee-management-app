@@ -1,5 +1,5 @@
 import Employee from '../models/employee.js'
-import Attendence from '../models/attendence.js'
+import Attendance from '../models/attendance.js'
 
 // Create employee endpoint
 export const addEmployee = async (req, res) => {
@@ -33,7 +33,7 @@ export const addEmployee = async (req, res) => {
     const employee = await newEmployee.save()
 
     res.status(201).json({
-      message: 'employe created successfully',
+      message: 'employee created successfully',
       employee: employee,
     })
   } catch (error) {

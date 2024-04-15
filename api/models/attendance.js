@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 
-const attendenceSchema = new mongoose.Schema({
+const attendanceSchema = new mongoose.Schema({
   employeeID: {
     type: 'string',
     required: true,
@@ -19,5 +19,5 @@ const attendenceSchema = new mongoose.Schema({
   },
 })
 
-const Attendence = mongoose.model('Attendence', attendenceSchema)
-export default Attendence
+const Attendance = mongoose.model('Attendance', attendanceSchema)
+export default Attendance

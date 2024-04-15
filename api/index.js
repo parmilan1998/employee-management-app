@@ -12,7 +12,7 @@ const port = 8000
 // Middleware
 app.use(cors())
 app.use(json())
-app.use(urlencoded({ extended: false }))
+// app.use(urlencoded({ extended: false }))
 
 // Mongodb Connection
 connect('mongodb+srv://parmilan:parmilan@cluster0.ygk8gbf.mongodb.net/')
@@ -28,4 +28,4 @@ app.listen(port, () => {
   console.log(`Server listening on port ${port}`)
 })
 
-app.use('/employee', employeeRoute)
+app.use('/api/employees', employeeRoute)
